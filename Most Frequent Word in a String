@@ -35,7 +35,6 @@ class StringOps {
 		//to get values and keys:- map.keyset(), map.values()
 		int freq=0;
 		String freqword=null;
-		//when u hv d caliber but the measurement is incorrect!
 		for(String word: map.keySet()) // traverse through the keyset
 		{
 			Integer val=map.get(word);//get value for corresponding word
