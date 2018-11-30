@@ -1,0 +1,31 @@
+package practice;
+import java.util.*;
+class Divisorpgm {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*Given k=3, n=6, find 10 the numbers that are divisible by k or contain k in it
+		 * return the nth element in the array  containing these elements 
+		 * 3,6,9,12,13,15,18,21,23, => return 15
+		 */
+		Scanner sc=new Scanner(System.in);
+		int a[]=new int[10];
+		int k=sc.nextInt();
+		int n=sc.nextInt();
+		for(int i=0;i<10;i++)
+		{
+			for(int j=1;j<9;j++)
+			{
+				a[j]=k*j;
+				if(j%k==0 || j%10==0 || j/10==0)
+				{
+					a[j+1]=j;
+				}
+			}
+			System.out.println(a[i]);
+		}
+		System.out.println();
+		System.out.println(a[n-1]);
+	}
+
+}
