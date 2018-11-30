@@ -1,0 +1,55 @@
+package practice;
+import java.util.*;
+class StringOps {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();//hello to u welcome to you
+		//most frequent word
+		String s1=s.toLowerCase();
+		String s3[]=s1.split(" "); //1.SPLIT FUNCTION
+		//String s4[]=new String[s1.length()];
+		for(String word: s3)
+			System.out.println(word);
+		//int count=0;
+	/*	for(int i=0;i<s3.length;i++)
+		{
+			System.out.println(s3[i]);
+			
+		}*/
+		Map<String,Integer> map=new HashMap<String,Integer>();//hello-1, to-1 map<key,value>-key is string value is its freq
+		for(String word: s3)
+		{
+			if(word==null|| word.trim().equals(""))
+				continue;
+			if(map.containsKey(word))//if word is present in the map
+			{
+				map.put(word, map.get(word)+1); //put the word and increment the value
+			}
+			else
+				map.put(word, 1);//put the word as key wid its value as 1
+		}
+		
+		System.out.println(map);
+		//to get values and keys:- map.keyset(), map.values()
+		int freq=0;
+		String freqword=null;
+		//when u hv d caliber but the measurement is incorrect!
+		for(String word: map.keySet()) // traverse through the keyset
+		{
+			Integer val=map.get(word);//get value for corresponding word
+			if(val>freq)
+			{
+				freq=val;
+				freqword=word;
+			}
+			
+		}
+		System.out.printf("Most frequent word is: %s and its frequency is %d",freqword,freq);
+		
+		
+
+	}
+
+}
