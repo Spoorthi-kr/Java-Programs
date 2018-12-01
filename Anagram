@@ -1,0 +1,28 @@
+package practice;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Anagram {
+//sort the strings and compare them!!
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String sortString(String s)                                     //has an error here
+		{
+			char ch[]=s.toCharArray();
+			Arrays.sort(ch);
+			String s3=new String(ch);
+			return s3;
+			
+		}
+		Scanner sc=new Scanner(System.in);
+		String s1=sc.nextLine();
+		String s2=sc.nextLine();
+		if(sortString(s1).equals(s2))
+			System.out.println("Anagram");
+		else
+			System.out.println("Not Anagram");
+		
+	}
+
+}
