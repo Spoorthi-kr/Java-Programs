@@ -1,0 +1,54 @@
+
+package practice;
+
+import java.util.Scanner;
+
+class Palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//To reverse a string
+		//String does not have a reverse() method cus its immutable
+		//StringBuilder has reverse but not toCharArray() method
+		//TECHNIQUE-1: StringBuilder reverse method
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		StringBuilder s2=new StringBuilder();
+		s2.append(s);
+		s2=s2.reverse();
+		System.out.printf("Reverse is %s\n",s2);
+		//equals is string method so convert string buffer to a string 
+		//u cannot typecast a string directly as strig is immutable
+		//use new String(sb) to covert it to string
+		if(new String(s2).equals(s))
+		System.out.println("palindrome");
+		else
+			System.out.println("Not palindrome");
+		//TECHNIQUE 2: USING THE LOOP
+
+		String b = "";
+        for(int i = s.length()- 1; i >= 0; i--)
+        {
+            b = b + s.charAt(i);
+        }
+        if(s.equalsIgnoreCase(b))
+        {
+            System.out.println("The string is palindrome.");
+        }
+        else
+        {
+            System.out.println("The string is not palindrome.");
+        }
+        //TECHNIQUE 3:
+       /* int i=0;
+        String temp="";
+        while(s.charAt(i)!='\0')
+        {
+        	temp=temp+s.charAt(i);
+        	s.charAt(i)=s.charAt(s.length()-i-1);
+        	i++;
+        	
+        }*/
+	}   
+
+}
