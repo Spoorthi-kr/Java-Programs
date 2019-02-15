@@ -1,0 +1,17 @@
+
+class wordRotation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		        // input string 
+		        String str = "Welcome???@@##$ to#$% Geeks%$^for$%^&Geeks"; 
+		          
+		        // similar to Matcher.replaceAll 
+		        str = str.replaceAll("\\p{Punct}",""); 
+		          
+		        System.out.println(str); 
+		    } 
+		      
+		
+	}
